@@ -1,4 +1,6 @@
-# MachineLearningProjects
+################################################################
+################# Lodaing Packages and Libraries ###############
+
 install.packages("kernlab")
 install.packages("class")
 install.packages("caret")
@@ -19,6 +21,7 @@ summary(spam_c)
 spam_s=scale(spam_c,center = TRUE, scale = TRUE)
 summary(spam_s)
 
+###########################################################################
 ####### 1) randomly select 100 spam and 100 non-spam as training set ######
 #Setting classes index by refereing the original dataset
 n = 100
@@ -29,6 +32,7 @@ train = rbind(spam_s[index_Y,], spam_s[index_N,])
 # get class factor for training data
 train_label= factor(c(rep("spam",n), rep("nonspam",n)))
 
+###########################################################################
 ################# 2) 50 spam and 50 nonspam as the test set ###############
 m = 50
 test_sample = spam_s[-train,]
@@ -76,6 +80,7 @@ set.seed(1234)
 knn3_pred=knn3Train(train, test, cl, k = 3, prob=TRUE)
 attributes(knn3_pred)
 
+######################################################################
 ################## draw classification boundary for kNN ##############
 # scatter plot of the training data
 yes=spam_s[spam$type=="spam",]
