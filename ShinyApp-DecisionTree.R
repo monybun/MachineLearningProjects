@@ -1,7 +1,3 @@
-##############                                                   ################
-##############  Machine Learning GCW3- Tree-Based Classification ################
-##############                                                   ################
-
 #################################################################################
 ################################ Loading Packages ###############################
 #install.packages("kernlab")
@@ -155,7 +151,7 @@ server <- function(input, output) {
   })
   
 ################# OUTPUT 2: Variable importance measure(1) ###################
-################# Random Forest-Variable importance graph ####################
+####   Random Forest-Variable importance graph
   output$PID.rf <- renderPlot({dataInput()
     
     fitControl = trainControl(
@@ -176,7 +172,7 @@ server <- function(input, output) {
   })
   
 ################# OUTPUT 3: Variable importance measure(2): #################
-##################   Random Forest-Mean decrease graphs   ###################
+####   Random Forest-Mean decrease graphs
   output$MeanDecrease <- renderPlot({dataInput()
     
     pima.bag = randomForest(diabetes~.,
